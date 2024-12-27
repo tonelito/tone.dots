@@ -18,14 +18,6 @@ return {
         enable_hsl = true, -- Highlight hsl colors like 'hsl(0,100%,50%)'
         enable_var_usage = true, -- Highlight CSS variables
       })
-
-      require("cmp").setup({
-        formatting = {
-          fields = { "kind", "abbr", "menu" },
-          format = require("nvim-highlight-colors").format,
-          expandable_indicator = true,
-        },
-      })
     end,
   },
 }
