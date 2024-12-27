@@ -1,1 +1,24 @@
-/Users/juangalicia/Library/Application Support/com.mitchellh.ghostty/config
+# fullscreen for macOS
+window-decoration = true
+fullscreen = true
+
+# Theme
+theme = Kanagawa Dragon
+
+# Font
+font-family = IosevkaTerm Nerd Font Mono
+font-size = 17
+
+# Opacity
+background-opacity = 0.7
+background-blur-radius = 1
+
+# Colors
+background = 0d0c0c
+foreground = DCD7BA
+selection-background = 2D4F67
+selection-foreground = C8C093
+cursor-color = C8C093
+
+# if your alt/option combinations aren't working uncomment this line
+# macos-option-as-alt = true

@@ -24,6 +24,16 @@ if not set -q TMUX
     end
 end
 
+# function to change the current working directory when exiting Yazi.
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # shell enhancements
 starship init fish | source
 zoxide init fish | source
@@ -37,6 +47,9 @@ carapace _carapace | source
 # JAVA_HOME
 set -x JAVA_HOME /usr/local/Cellar/openjdk@21/21.0.5/libexec/openjdk.jdk/Contents/Home
 set -x PATH $JAVA_HOME/bin $PATH
+
+# set nvim as the default editor
+set -gx EDITOR nvim
 
 # greeting message
 set -g fish_greeting ""
